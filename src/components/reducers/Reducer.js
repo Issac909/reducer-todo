@@ -4,7 +4,10 @@ export const todo = [
   {
     item: "Learn about reducers",
     completed: false,
-    id: 3892987589
+    id: 3892987589,
+    date: Date.now(),
+    error: '',
+    deadline: ''
   }
 ];
 
@@ -15,7 +18,7 @@ export const reducer = (state, action) => {
       console.log("case state", state);
       return [
         ...state,
-        { item: action.payload, completed: false, id: Date.now() }
+        { item: action.payload, completed: false, id: Date.now(), date: Date.now(), deadline: '' }
       ];
 
     case "TOGGLE_COMPLETED":
@@ -28,9 +31,20 @@ export const reducer = (state, action) => {
 
     case "CLEAR_COMPLETED":
       return state.filter(todo => !todo.completed);
+          
+    // case "ADD_DEADLINE":
+    //   return [
+    //     ...state,
+    //     { deadline: action.payload, error: '' }
+    //   ]
+
     default:
       return state;
-  }
+
+  };
+
+    
+
 }; 
 
 
