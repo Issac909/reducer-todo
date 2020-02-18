@@ -9,6 +9,7 @@ const TodoForm = ({ dispatch }) => {
 
   const submitForm = e => {
     e.preventDefault();
+    e.stopPropagation();
     dispatch({
       type: "ADD_TODO",
       payload: item
