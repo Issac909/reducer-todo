@@ -42,8 +42,7 @@ function Todo({ todo, dispatch }) {
         {todo.item} 
         <span>{todo.deadline}</span><span>{todo.error}</span></p>
             <input type = 'date' onChange = {handleChanges}  />
-              <button onclick = {handleDeadline}>Confirm</button>
-       
+              <button onClick = {handleDeadline}>Confirm</button>
       </div>
     </>
   );
